@@ -63,7 +63,7 @@ class ViewUsuario(View):
         return JsonResponse(datos)
 
 
-    def delete(self, request):
+    def delete(self, request,id):
         usuario = list(Usuario.objects.filter(id_usuario =id).values())
         if len(usuario) >0:
             Usuario.objects.filter(id_usuario = id).delete()
@@ -125,7 +125,7 @@ class ViewEstado(View):
             datos={'mensaje': "No se encontro el estado"}
         return JsonResponse(datos)
 
-    def delete(self, request):
+    def delete(self, request,id):
         estado = list(Estado.objects.filter(id_estado =id).values())
         if len(estado) >0:
             Estado.objects.filter(id_estado = id).delete()
@@ -183,7 +183,7 @@ class ViewProducto(View):
         return JsonResponse(datos)
 
 
-    def delete(self, request):
+    def delete(self, request,id):
         producto = list(Producto.objects.filter(id_producto =id).values())
         if len(producto) >0:
             Producto.objects.filter(id_producto = id).delete()
@@ -296,7 +296,7 @@ class ViewTienda(View):
             datos={'mensaje': "No se encontro la tienda"}
         return JsonResponse(datos)
 
-    def delete(self, request):
+    def delete(self, request,id):
         tienda = list(Tienda.objects.filter(id_tienda =id).values())
         if len(tienda) >0:
             Tienda.objects.filter(id_tienda = id).delete()
